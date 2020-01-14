@@ -2,6 +2,7 @@ package config;
 
 import com.locationguru.csf.language.LanguageService;
 import com.locationguru.csf.language.NoOpLanguageService;
+import com.locationguru.csf.language.english.EnglishLanguageService;
 import org.springframework.boot.autoconfigure.condition.*;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -18,5 +19,12 @@ public class LanguageServiceAutoConfiguration
 	public NoOpLanguageService noOpLanguageService()
 	{
 		return new NoOpLanguageService();
+	}
+
+	@Bean(initMethod = "initialize", destroyMethod = "close")
+	@ConditionalOnProperty(prefix = "application.language-service", name = "provider", havingValue = "english", matchIfMissing = true)
+	public EnglishLanguageService englishLanguageService()
+	{
+		return new EnglishLanguageService();
 	}
 }

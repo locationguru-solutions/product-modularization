@@ -6,6 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
 		<module>language-api</module>
+		<module>english-language-service</module>
 	</modules>
 
 	<parent>
