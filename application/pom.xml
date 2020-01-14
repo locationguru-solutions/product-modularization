@@ -16,6 +16,20 @@
 
 	<name>Application</name>
 
+	<profiles>
+		<profile>
+			<id>english</id>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.locationguru.learning</groupId>
+					<artifactId>english-language-service</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+
 	<dependencies>
 
 		<dependency>
@@ -46,7 +60,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 
 	</dependencies>
 
