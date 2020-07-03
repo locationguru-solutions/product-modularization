@@ -28,6 +28,7 @@
 	<modules>
 		<module>employee-events</module>
 		<module>spring-boot-starters</module>
+		<module>employee-application</module>
 	</modules>
 
 	<!-- Build and plugin configuration -->
