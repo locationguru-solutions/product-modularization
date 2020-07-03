@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Setting up Spring Boot as project parent -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+
+		<relativePath />
+	</parent>
+
+	<groupId>com.locationguru.learning</groupId>
+	<artifactId>product-modularization</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<!-- This module will be packaged as POM -->
+	<packaging>pom</packaging>
+
+	<name>Product Modularization</name>
+	<description>Parent module for dependency management</description>
+
+	<!-- Project modules -->
+	<modules>
+	</modules>
+
+	<!-- Build and plugin configuration -->
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<!-- Configures Maven resource filtering plugin -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>log4j2-dev.xml</include>
+					<include>log4j2-spring.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<!-- Configures Maven compiler plugin for Java -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Configures Maven surefire plugin for unit testing -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+
+			<!-- Configures Maven failsafe plugin for integration testing -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+			</plugin>
+
+			<!-- Configures Maven WAR plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
+
+			<!-- Configures Spring Boot JAR / WAR plugin -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- Project properties -->
+	<properties>
+
+		<!-- Compiler -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<java.version>14</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+	</properties>
+
+	<!-- Managed dependencies -->
+
+	<dependencyManagement>
+		<dependencies>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+</project>
