@@ -26,6 +26,8 @@
 
 	<!-- Project modules -->
 	<modules>
+		<module>employee-events</module>
+		<module>spring-boot-starters</module>
 	</modules>
 
 	<!-- Build and plugin configuration -->
@@ -107,6 +109,13 @@
 
 		</dependencies>
 	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+	</dependencies>
 
 
 </project>
