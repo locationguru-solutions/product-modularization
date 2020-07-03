@@ -2,7 +2,6 @@ package config;
 
 import com.locationguru.csf.language.LanguageService;
 import com.locationguru.csf.language.NoOpLanguageService;
-import com.locationguru.csf.language.english.EnglishLanguageService;
 import org.springframework.boot.autoconfigure.condition.*;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
