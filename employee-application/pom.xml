@@ -48,6 +48,7 @@
 			</dependencies>
 
 		</profile>
+
 		<profile>
 			<id>team-tracker</id>
 

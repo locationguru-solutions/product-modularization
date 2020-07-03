@@ -12,6 +12,7 @@ public class TeamPilotEmployeeEventHandler
 
 	private static final Logger logger = LogManager.getLogger(TeamPilotEmployeeEventHandler.class);
 
+
 	@Override
 	public Result handleEvent(final String event, final EventData data)
 	{
@@ -25,5 +26,11 @@ public class TeamPilotEmployeeEventHandler
 		}
 
 		return new Result();
+	}
+
+	@Override
+	public void close() throws Exception
+	{
+		logger.info("Close");
 	}
 }

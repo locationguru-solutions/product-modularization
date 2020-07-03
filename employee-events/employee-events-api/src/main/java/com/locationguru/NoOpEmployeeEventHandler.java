@@ -15,7 +15,12 @@ public class NoOpEmployeeEventHandler
 	public Result handleEvent(final String event, final EventData data)
 	{
 		logger.info("Received event '{}'. Ignoring.", event);
-
 		return new Result();
+	}
+
+	@Override
+	public void close() throws Exception
+	{
+		logger.info("Closing");
 	}
 }

@@ -3,7 +3,7 @@ package com.locationguru.events;
 import com.locationguru.events.model.EventData;
 import com.locationguru.events.model.Result;
 
-public interface EmployeeEventHandler
+public interface CustomerEventHandler
 		extends AutoCloseable
 {
 	public default void initialize()

@@ -14,7 +14,7 @@ public class EmployeeEventsAutoConfiguration
 {
 	private static final Logger logger = LogManager.getLogger(EmployeeEventsAutoConfiguration.class);
 
-	@Bean
+	@Bean(initMethod = "initialize", destroyMethod = "close")
 	@ConditionalOnMissingBean(value = EmployeeEventHandler.class)
 	@ConditionalOnProperty(prefix = "application.employee-event", name = "handler", havingValue = "no-op", matchIfMissing = true)
 	public EmployeeEventHandler employeeEventHandler()
